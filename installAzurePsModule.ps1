@@ -1,5 +1,6 @@
 $outputPath = "$env:ProgramData\vmssInstall\AzurePsModuleInstall.log"
 $nl = [Environment]::NewLineNewLine
+New-Item -ItemType Directory -Force -Path $env:ProgramData\vmssInstall
 [IO.File]::WriteAllText($outputPath, "Attempting to install Azure PowerShell modules.$nl")
 if (!(Test-Path z:\))
 {
