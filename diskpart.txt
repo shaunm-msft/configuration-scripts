@@ -1,0 +1,5 @@
+select disk 2
+convert gpt
+create partition primary
+assign letter=F
+exit
