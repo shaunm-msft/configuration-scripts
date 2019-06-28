@@ -1,0 +1,14 @@
+select disk 3
+convert gpt
+select disk 3
+create partition primary
+select disk 4
+convert gpt
+select disk 4
+create partition primary
+select disk 3
+create volume stripe disk=3,4
+select disk 3
+format fs=ntfs label="Temp Striped Volume 1" quick
+select disk 4
+format fs=ntfs label="Temp Striped Volume 2" quick
