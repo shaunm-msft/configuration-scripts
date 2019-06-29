@@ -8,3 +8,4 @@ select disk 2
 create volume stripe disk=3,4
 select volume 4
 format fs=ntfs label="Temp Striped Volume 1" quick
+assign letter=f
