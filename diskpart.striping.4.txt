@@ -1,0 +1,17 @@
+select disk 2
+convert gpt
+convert dynamic
+select disk 3
+convert gpt
+convert dynamic
+select disk 4
+convert gpt
+convert dynamic
+select disk 5
+convert gpt
+convert dynamic
+select disk 2
+create volume stripe disk=2,3,4,5
+select volume 4
+format fs=ntfs label="Temp Striped Volume 1" quick
+assign letter=f
