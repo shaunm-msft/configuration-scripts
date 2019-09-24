@@ -1,2 +1,2 @@
-diskpart /s z:\vmsetup\diskpart.txt
+diskpart /s %~dp0\diskpart.txt
 format f: /FS:NTFS /Q /V:DataDisk0 /Y
