@@ -122,7 +122,7 @@ do_partition() {
         # default to Linux partition type (ie, ext3/ext4/xfs)
         _type=83
     fi
-    (echo n; echo p; echo 1; echo ; echo ; echo ${_type}; echo w) | fdisk "${_disk}"
+    parted "${_disk}" -s mklabel gpt unit TB mkpart primary 0 100%
 
 #
 # Use the bash-specific $PIPESTATUS to ensure we get the correct exit code
